@@ -3,8 +3,7 @@ from keras import layers
 import matplotlib
 
 import matplotlib.pyplot as plt
-import tensorflow as tf
-from tensorflow import keras, optimizers
+from tensorflow import keras
 
 # |%%--%%| <Soih8GvDUF|l6E7IJXMNK>
 
