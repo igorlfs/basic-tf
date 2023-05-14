@@ -12,6 +12,7 @@ select = [
     "A",
     "C4",
     "INP",
+    "ISC",
     "ICN",
     "RET",
     "SIM",
@@ -24,3 +25,21 @@ select = [
     "NPY",
     "RUF",
 ]
+
+[tool.poetry]
+name = "tf"
+version = "0.1.0"
+description = ""
+authors = ["Igor <igorlfs@ufmg.br>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+tensorflow = "^2.12.0"
+pandas = "^2.0.1"
+matplotlib = "^3.7.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
