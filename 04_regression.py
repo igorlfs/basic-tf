@@ -1,12 +1,12 @@
 import os
-from keras.layers.serialization import preprocessing_normalization
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import tensorflow as tf
-from tensorflow import keras
 from keras import layers
+from keras.layers.serialization import preprocessing_normalization
+from tensorflow import keras
 
 # from keras.api._v2 import keras as KerasAPI
 

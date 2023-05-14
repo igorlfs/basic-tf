@@ -1,8 +1,8 @@
 import os
-from keras import layers
-import matplotlib
 
+import matplotlib as mpl
 import matplotlib.pyplot as plt
+from keras import layers
 from tensorflow import keras
 
 # |%%--%%| <Soih8GvDUF|l6E7IJXMNK>
@@ -40,7 +40,7 @@ class_names = [
 ]
 
 
-def show():
+def show() -> None:
     plt.figure()
     for i in range(16):
         plt.subplot(4, 4, i + 1)
@@ -48,7 +48,7 @@ def show():
         plt.yticks([])
         plt.grid(False)
         plt.tight_layout()
-        plt.set_cmap(matplotlib.colors.Colormap("binary"))
+        plt.set_cmap(mpl.colors.Colormap("binary"))
         plt.imshow(train_images[i])
         plt.xlabel(class_names[train_labels[i][0]])
 

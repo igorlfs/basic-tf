@@ -1,6 +1,9 @@
-import tensorflow as tf
-import numpy as np
+import os
+
 import matplotlib.pyplot as plt
+import numpy as np
+import tensorflow as tf
+from tensorflow import keras
 
 # autocompletion only works with pyright (not with pylsp)
 
@@ -9,14 +12,12 @@ import matplotlib.pyplot as plt
 # https://stackoverflow.com/q/68860879
 # https://github.com/microsoft/pylance-release/issues/1066
 
-from keras.api._v2 import keras as KerasAPI
-import os
 
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 
 # |%%--%%| <p9NP0C1YaV|d0M7aw5x5T>
 
-mnist = KerasAPI.datasets.mnist
+mnist = keras.datasets.mnist
 
 # |%%--%%| <d0M7aw5x5T|nzEYMq96gn>
 
@@ -39,11 +40,11 @@ plt.show()
 # |%%--%%| <pq0e1aPwcY|8z1BUyPszV>
 
 # model
-model = KerasAPI.models.Sequential(
+model = keras.models.Sequential(
     [
-        KerasAPI.layers.Flatten(input_shape=(28, 28)),
-        KerasAPI.layers.Dense(128, activation="relu"),
-        KerasAPI.layers.Dense(10),
+        keras.layers.Flatten(input_shape=(28, 28)),
+        keras.layers.Dense(128, activation="relu"),
+        keras.layers.Dense(10),
     ]
 )
 print(model.summary())
@@ -51,8 +52,8 @@ print(model.summary())
 # |%%--%%| <8z1BUyPszV|SdeCydaPNe>
 
 # loss and optimizer
-loss = KerasAPI.losses.SparseCategoricalCrossentropy(from_logits=True)
-optim = KerasAPI.optimizers.Adam(learning_rate=0.001)
+loss = keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+optim = keras.optimizers.Adam(learning_rate=0.001)
 metrics = ["accuracy"]
 
 model.compile(loss=loss, optimizer=optim, metrics=metrics)
@@ -72,7 +73,7 @@ model.evaluate(x_test, y_test, batch_size=batch_size)
 # |%%--%%| <v730mxCl59|4eTUIfEWyw>
 
 # predictions
-# probabily_model = KerasAPI.models.Sequential([model, KerasAPI.layers.Softmax()])
+# probabily_model = keras.models.Sequential([model, keras.layers.Softmax()])
 #
 # predictions = probabily_model(x_test)
 # pred0 = predictions[0]

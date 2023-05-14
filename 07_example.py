@@ -1,5 +1,5 @@
-from tensorflow import keras
 import numpy as np
+from tensorflow import keras
 
 # |%%--%%| <5omaxfNF0q|GPXKvD2LCw>
 

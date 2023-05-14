@@ -62,7 +62,7 @@ model.load_weights("nn_weights.h5")
 json_string = model.to_json()
 with open("nn_model", "w") as f:
     f.write(json_string)
-with open("nn_model", "r") as f:
+with open("nn_model") as f:
     loaded_json_string = f.read()
 
 new_model_plus = keras.models.model_from_json(loaded_json_string)
